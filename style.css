@@ -1,192 +1,77 @@
-/* 基本のリセット */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #87CEEB;
+    transition: background 1s;
 }
 
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+#camp-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/day.jpg') no-repeat center center/cover;
+    transition: background 2s;
 }
 
-header .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+#campfire {
+    width: 100px;
+    height: 100px;
+    background: url('../assets/images/campfire.png') no-repeat center center/cover;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
+#tent {
+    position: absolute;
+    bottom: 50px;
+    width: 150px;
+    height: 150px;
+    background: url('../assets/images/tent.png') no-repeat center center/cover;
+    cursor: pointer;
 }
 
-nav ul li {
-  margin: 0 15px;
+#tent-content {
+    display: none;
+    font-size: 50px;
+    text-align: center;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
+/* 📝 プロフィール */
+#profile {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
-nav ul li a:hover {
-  color: #f0f0f0;
+#profile h1 {
+    font-size: 24px;
+    color: #333;
 }
 
-/* セクション */
-section {
-  padding: 100px 20px 50px;
-  text-align: center;
-  transition: opacity 0.5s ease-out;
-}
-
-/* 最初の紹介セクション */
-.intro {
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
-  color: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.intro h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.intro p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+#profile p {
+    font-size: 16px;
+    color: #555;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #f0f0f0;
-  color: #333;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e0e0e0;
-}
-
-/* 観光地セクション */
-.destinations {
-  padding: 50px 20px;
-  background-color: #ffffff;
-}
-
-.destinations h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.destination-card {
-  background-size: cover;
-  background-position: center;
-  width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  color: white;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 15px;
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease;
-}
-
-.destination-card:hover {
-  transform: scale(1.05);
-}
-
-/* アクティビティセクション */
-.activities {
-  padding: 50px 20px;
-  background-color: #f4f4f4;
-}
-
-.activities h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.activity-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.activity-card {
-  background-color: white;
-  padding: 20px;
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.activity-card:hover {
-  transform: translateY(-10px);
-}
-
-.activity-card p {
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* フッター */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  position: relative;
-}
-
-/* ボタン押下後のアニメーション */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-section {
-  opacity: 0;
-}
-
-section.visible {
-  opacity: 1;
-  animation: fadeIn 1s ease-out;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
