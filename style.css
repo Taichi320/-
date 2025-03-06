@@ -1,0 +1,192 @@
+/* 基本のリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f0f0f0;
+}
+
+/* セクション */
+section {
+  padding: 100px 20px 50px;
+  text-align: center;
+  transition: opacity 0.5s ease-out;
+}
+
+/* 最初の紹介セクション */
+.intro {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 観光地セクション */
+.destinations {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.destinations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.destination-card {
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: scale(1.05);
+}
+
+/* アクティビティセクション */
+.activities {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.activities h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.activity-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.activity-card {
+  background-color: white;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-10px);
+}
+
+.activity-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: relative;
+}
+
+/* ボタン押下後のアニメーション */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+section {
+  opacity: 0;
+}
+
+section.visible {
+  opacity: 1;
+  animation: fadeIn 1s ease-out;
+}
